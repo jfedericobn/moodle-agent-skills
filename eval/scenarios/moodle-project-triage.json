@@ -1,0 +1,18 @@
+{
+  "id": "moodle-project-triage",
+  "title": "Distinguish plugin requirements from core version",
+  "skills": [
+    "moodle-project-triage"
+  ],
+  "moodle_targets": [
+    "5.3",
+    "4.5"
+  ],
+  "setup": "A standalone local plugin has a version.php with component, version and requires. There is no core checkout.",
+  "prompt": "Inspect this project and tell me which Moodle it is running.",
+  "checks": [
+    "Identify the plugin and its declared minimum build.",
+    "Report that the running and checkout Moodle releases are unknown.",
+    "Do not execute version.php or read config.php contents."
+  ]
+}

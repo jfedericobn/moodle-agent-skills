@@ -1,0 +1,18 @@
+{
+  "id": "moodle-router",
+  "title": "Route an activity change adding a service and a UI button",
+  "skills": [
+    "moodle-router"
+  ],
+  "moodle_targets": [
+    "5.3",
+    "4.5"
+  ],
+  "setup": "An LMS checkout contains mod_bigbluebuttonbn. The task concerns its Moodle integration.",
+  "prompt": "Add a web-service function and a teacher-only button to the BigBlueButton activity. Which workflows should you use before changing files?",
+  "checks": [
+    "Select plugin development, external API and access guidance.",
+    "Select PHPUnit for server behavior and consider Behat for the teacher/student interaction.",
+    "Avoid treating the task as a BigBlueButton server deployment."
+  ]
+}

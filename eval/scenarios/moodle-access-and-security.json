@@ -1,0 +1,18 @@
+{
+  "id": "moodle-access-and-security",
+  "title": "Protect activity settings with a context-specific capability",
+  "skills": [
+    "moodle-access-and-security"
+  ],
+  "moodle_targets": [
+    "5.3",
+    "4.5"
+  ],
+  "setup": "A disposable Moodle site contains two activity instances and users with different permissions.",
+  "prompt": "Review a proposed change to activity settings and add tests for who can see them.",
+  "checks": [
+    "Check the capability in the context of the specific activity.",
+    "Use generated data to verify authorized and unauthorized behavior.",
+    "Verify that the view discloses only data allowed by the feature."
+  ]
+}

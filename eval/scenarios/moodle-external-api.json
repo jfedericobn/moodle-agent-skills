@@ -1,0 +1,18 @@
+{
+  "id": "moodle-external-api",
+  "title": "Add a read-only activity external function",
+  "skills": [
+    "moodle-external-api"
+  ],
+  "moodle_targets": [
+    "5.3",
+    "4.5"
+  ],
+  "setup": "A local test site contains an activity and generated teachers and students. Access policy is teacher-only.",
+  "prompt": "Add an external function that returns the activity's display name for permitted callers.",
+  "checks": [
+    "Register the namespaced function with explicit parameters and returns.",
+    "Validate context and enforce the intended capability.",
+    "Verify allowed, denied and invalid-input cases."
+  ]
+}

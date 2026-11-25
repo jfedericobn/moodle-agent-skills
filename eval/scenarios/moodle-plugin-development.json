@@ -1,0 +1,18 @@
+{
+  "id": "moodle-plugin-development",
+  "title": "Identify an activity subplugin and its parent contract",
+  "skills": [
+    "moodle-plugin-development"
+  ],
+  "moodle_targets": [
+    "5.3",
+    "4.5"
+  ],
+  "setup": "A developer has a local checkout of the Moodle 5.3 BigBlueButton activity and one nested subplugin.",
+  "prompt": "Explain where a new sibling subplugin belongs and which files determine its plugin type.",
+  "checks": [
+    "Identify the activity parent and read its db/subplugins.json.",
+    "Distinguish the target branch's metadata keys and relative paths.",
+    "Use an existing sibling and the official plugin metadata guide to verify the location."
+  ]
+}

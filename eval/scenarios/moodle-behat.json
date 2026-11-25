@@ -1,0 +1,18 @@
+{
+  "id": "moodle-behat",
+  "title": "Cover a teacher-only action in an activity",
+  "skills": [
+    "moodle-behat"
+  ],
+  "moodle_targets": [
+    "5.3",
+    "4.5"
+  ],
+  "setup": "A disposable Behat environment has a sample activity, course, and generated teacher and student.",
+  "prompt": "Add an acceptance scenario for the teacher-only activity settings button.",
+  "checks": [
+    "Use Moodle generators and user-visible selectors.",
+    "Assert visibility or behavior for both teacher and student.",
+    "Use the existing runner and record the result."
+  ]
+}

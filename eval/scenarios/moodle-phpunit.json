@@ -1,0 +1,18 @@
+{
+  "id": "moodle-phpunit",
+  "title": "Verify activity behavior for two role contexts",
+  "skills": [
+    "moodle-phpunit"
+  ],
+  "moodle_targets": [
+    "5.3",
+    "4.5"
+  ],
+  "setup": "A configured PHPUnit site has a plugin test generator and an existing component suite.",
+  "prompt": "Write a regression test for the activity's role-specific display setting.",
+  "checks": [
+    "Use generated Moodle records and an appropriate base class.",
+    "Assert distinct observable behavior for the relevant roles.",
+    "Run the focused test and report the actual outcome."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "moodle-database-upgrades",
+  "title": "Add a column while preserving installed data",
+  "skills": [
+    "moodle-database-upgrades"
+  ],
+  "moodle_targets": [
+    "5.3",
+    "4.5"
+  ],
+  "setup": "A released local plugin has an existing table with seeded records. The target is a disposable Moodle database.",
+  "prompt": "Add a field with a data backfill for previously installed sites.",
+  "checks": [
+    "Update install XML and add a guarded upgrade with a savepoint after success.",
+    "Bump the plugin version and preserve existing rows.",
+    "Verify fresh-install and prior-release upgrade results."
+  ]
+}
