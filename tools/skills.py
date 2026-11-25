@@ -51,8 +51,8 @@ def validate():
     if sorted(route_names) != actual:
         raise ValueError("Routing guide does not cover exactly the catalog skills")
     scenarios = ROOT / "eval/scenarios"
-    scenario_ids = [entry["scenario"] for entry in entries]
-    if sorted(scenario_ids) != sorted(path.stem for path in scenarios.glob("*.json")):
+    scenario_ids = {scenario for entry in entries for scenario in entry["scenarios"]}
+    if scenario_ids != {path.stem for path in scenarios.glob("*.json")}:
         raise ValueError("Catalog and evaluation scenario files differ")
     for entry in entries:
         name = entry["name"]
@@ -86,11 +86,14 @@ def validate():
                         continue
                     if path.parent / href not in payload:
                         raise ValueError(f"Unpackaged link {link} in {name}/{path}")
-        case = json.loads((scenarios / f"{entry['scenario']}.json").read_text())
-        if (case["id"] != entry["scenario"] or name not in case["skills"]
-                or not set(case["skills"]) <= set(actual)
-                or not all(case[field] for field in ("prompt", "checks", "moodle_targets", "setup"))):
-            raise ValueError(f"Invalid scenario for {name}")
+        if not entry["scenarios"] or len(set(entry["scenarios"])) != len(entry["scenarios"]):
+            raise ValueError(f"Expected one or more distinct scenarios for {name}")
+        for scenario_id in entry["scenarios"]:
+            case = json.loads((scenarios / f"{scenario_id}.json").read_text())
+            if (case["id"] != scenario_id or name not in case["skills"]
+                    or not set(case["skills"]) <= set(actual)
+                    or not all(case[field] for field in ("prompt", "checks", "moodle_targets", "setup"))):
+                raise ValueError(f"Invalid scenario {scenario_id} for {name}")
     return len(entries)
 
 

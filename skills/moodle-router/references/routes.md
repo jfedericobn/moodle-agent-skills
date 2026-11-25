@@ -7,7 +7,7 @@ Select workflows by intent and file scope. Resolve the target checkout first whe
 - `moodle-plugin-development` covers component architecture, activities, and parent and subplugin contracts.
 - `moodle-access-and-security` covers permissions, contexts, state changes, and data exposure.
 - `moodle-database-upgrades` covers data access, XMLDB, version bumps and install or upgrade paths.
-- `moodle-external-api` covers external functions, services, server-side schemas and transports.
+- `moodle-external-api` covers external functions, service schemas, transports, and migration of legacy `ajax.php` actions to `core/ajax`.
 - `moodle-phpunit` covers server behavior, isolated state, generators and role-sensitive tests.
 - `moodle-behat` covers user-visible behavior, roles, features and browser checks.
 

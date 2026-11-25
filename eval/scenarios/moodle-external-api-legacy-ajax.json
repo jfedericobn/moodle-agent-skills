@@ -1,0 +1,19 @@
+{
+  "id": "moodle-external-api-legacy-ajax",
+  "title": "Migrate a JSON action while preserving a multipart upload",
+  "skills": [
+    "moodle-external-api"
+  ],
+  "moodle_targets": [
+    "5.3",
+    "4.5"
+  ],
+  "setup": "A disposable Moodle checkout contains an installed activity plugin with a teacher-only JSON settings action in ajax.php, a dedicated multipart upload endpoint reading $_FILES, and distinct JavaScript callers. Generated teacher and student accounts can access the course.",
+  "prompt": "Move the legacy settings action to Moodle's supported AJAX flow. Preserve the separate file upload and the existing permissions.",
+  "checks": [
+    "The settings action is registered with ajax enabled and exposes an explicit parameter and return contract.",
+    "The settings caller uses core/ajax with the registered methodname and schema-matching args. The plugin upgrade registers the function.",
+    "A teacher can save valid settings. Invalid input and users without the required activity capability cannot change settings.",
+    "The multipart upload still submits FormData and succeeds for an authorized user. It has not been moved to the JSON transport."
+  ]
+}

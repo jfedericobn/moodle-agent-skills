@@ -6,7 +6,9 @@
         "https://moodledev.io/docs/5.3/apis",
         "https://moodledev.io/docs/5.3/apis/plugintypes"
       ],
-      "scenario": "moodle-router"
+      "scenarios": [
+        "moodle-router"
+      ]
     },
     {
       "name": "moodle-project-triage",
@@ -15,7 +17,9 @@
         "https://moodledev.io/docs/5.1/devupdate",
         "https://moodledev.io/general/releases"
       ],
-      "scenario": "moodle-project-triage"
+      "scenarios": [
+        "moodle-project-triage"
+      ]
     },
     {
       "name": "moodle-plugin-development",
@@ -25,7 +29,9 @@
         "https://moodledev.io/docs/5.3/apis/plugintypes/mod",
         "https://moodledev.io/general/development/tools/metadata"
       ],
-      "scenario": "moodle-plugin-development"
+      "scenarios": [
+        "moodle-plugin-development"
+      ]
     },
     {
       "name": "moodle-access-and-security",
@@ -35,7 +41,9 @@
         "https://moodledev.io/docs/5.3/apis/subsystems/files",
         "https://moodledev.io/general/development/process/peer-review"
       ],
-      "scenario": "moodle-access-and-security"
+      "scenarios": [
+        "moodle-access-and-security"
+      ]
     },
     {
       "name": "moodle-database-upgrades",
@@ -44,16 +52,24 @@
         "https://moodledev.io/docs/5.3/apis",
         "https://moodledev.io/docs/5.3/apis/commonfiles"
       ],
-      "scenario": "moodle-database-upgrades"
+      "scenarios": [
+        "moodle-database-upgrades"
+      ]
     },
     {
       "name": "moodle-external-api",
       "sources": [
         "https://moodledev.io/docs/5.3/apis/subsystems/external/functions",
         "https://moodledev.io/docs/5.2/apis/subsystems/external/security",
-        "https://moodledev.io/docs/5.3/apis/commonfiles"
+        "https://moodledev.io/docs/5.3/apis/commonfiles",
+        "https://moodledev.io/docs/4.5/guides/javascript/ajax",
+        "https://moodledev.io/docs/5.3/guides/javascript/ajax",
+        "https://moodledev.io/docs/4.5/apis/subsystems/form/usage/files"
       ],
-      "scenario": "moodle-external-api"
+      "scenarios": [
+        "moodle-external-api",
+        "moodle-external-api-legacy-ajax"
+      ]
     },
     {
       "name": "moodle-phpunit",
@@ -62,7 +78,9 @@
         "https://moodledev.io/general/development/process/testing",
         "https://github.com/moodlehq/moodle-docker"
       ],
-      "scenario": "moodle-phpunit"
+      "scenarios": [
+        "moodle-phpunit"
+      ]
     },
     {
       "name": "moodle-behat",
@@ -71,7 +89,9 @@
         "https://moodledev.io/docs/5.3/apis/plugintypes/mod",
         "https://github.com/moodlehq/moodle-docker"
       ],
-      "scenario": "moodle-behat"
+      "scenarios": [
+        "moodle-behat"
+      ]
     }
   ]
 }
