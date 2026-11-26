@@ -1,0 +1,14 @@
+{
+  "id": "moodle-code-review-stable-candidate",
+  "title": "Review a stable plugin candidate across the full release range",
+  "skills": ["moodle-code-review"],
+  "moodle_targets": ["5.3", "4.5"],
+  "setup": "A Moodle activity subplugin has a previous stable tag and several merged PRs. The candidate changes guest recording access and reminder behavior. An Open LMS sandbox check has not run. The planned stable bump also edits db/upgrade.php.",
+  "prompt": "Conduct the security and reliability review before the stable bump and report release readiness.",
+  "checks": [
+    "Establishes both commit IDs and reviews the full range and affected code, not just the bump or latest PR.",
+    "Uses applicable Moodle and ASVS controls and checks both permitted and denied access behavior.",
+    "Checks scheduled task reliability and calls out missing sandbox evidence without marking it passed.",
+    "Requires review and verification of the final upgrade change before sign-off."
+  ]
+}

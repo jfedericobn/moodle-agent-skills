@@ -92,6 +92,20 @@
       "scenarios": [
         "moodle-behat"
       ]
+    },
+    {
+      "name": "moodle-code-review",
+      "sources": [
+        "https://moodledev.io/general/development/process/peer-review",
+        "https://moodledev.io/general/development/process/testing",
+        "https://moodledev.io/general/community/plugincontribution/codeprechecks",
+        "https://asvs.owasp.org/",
+        "https://csrc.nist.gov/pubs/sp/800/218/final"
+      ],
+      "scenarios": [
+        "moodle-code-review-stable-candidate",
+        "moodle-code-review-acceptance"
+      ]
     }
   ]
 }

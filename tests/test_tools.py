@@ -18,6 +18,8 @@ class PackTests(unittest.TestCase):
     def test_every_agent_install_layout_and_bundled_detector(self):
         project_paths = [".claude/skills", ".agents/skills", ".cursor/skills", ".github/skills"]
         user_paths = [*project_paths[:3], ".copilot/skills"]
+        catalog = json.loads((ROOT / "catalog.json").read_text())
+        expected = {entry["name"] for entry in catalog["skills"]}
         with tempfile.TemporaryDirectory() as temp:
             for scope, roots in (("project", project_paths), ("user", user_paths)):
                 base = Path(temp) / scope
@@ -29,14 +31,15 @@ class PackTests(unittest.TestCase):
                 self.assertEqual(result.returncode, 0, result.stderr)
                 for root in roots:
                     installed = base / root
-                    self.assertEqual(len(list(installed.glob("*/SKILL.md"))), 8)
+                    skills = {path.parent.name for path in installed.glob("*/SKILL.md")}
+                    self.assertEqual(skills, expected)
                     detector = installed / "moodle-project-triage/scripts/detect.py"
                     report = command(detector, base)
                     self.assertEqual(report.returncode, 0, report.stderr)
                     self.assertEqual(json.loads(report.stdout)["kind"], "unknown")
                 repeat = command(INSTALLER, *args)
                 self.assertEqual(repeat.returncode, 0, repeat.stderr)
-                self.assertEqual(repeat.stdout.count("Already current:"), 32)
+                self.assertEqual(repeat.stdout.count("Already current:"), len(expected) * len(roots))
 
     def test_conflict_refuses_to_replace_edits(self):
         with tempfile.TemporaryDirectory() as temp:

@@ -1,0 +1,13 @@
+{
+  "id": "moodle-code-review-acceptance",
+  "title": "Distinguish plugin CI from release acceptance",
+  "skills": ["moodle-code-review"],
+  "moodle_targets": ["5.3", "4.5"],
+  "setup": "A plugin has passing style checks and PHPUnit on one supported database. A prior review calls for a second database, backup and restore, and an environment-specific recording flow. The source changes are present but the additional results are unavailable.",
+  "prompt": "Check whether the previous findings are resolved and whether this package is ready to send to the customer.",
+  "checks": [
+    "Separates verified findings from claimed implementation and pending acceptance.",
+    "Identifies missing database, backup and restore, and sandbox evidence tied to the candidate.",
+    "Reports the missing required checks as blockers and preserves the maintainer sign-off boundary."
+  ]
+}

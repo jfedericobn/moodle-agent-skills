@@ -2,7 +2,7 @@
 
 A community pilot of portable development workflows for Moodle LMS, modeled on [WordPress Agent Skills](https://github.com/WordPress/agent-skills). Skills guide an agent through project triage, plugin development, Moodle APIs and testing. They use the open [Agent Skills format](https://agentskills.io/specification).
 
-One set of eight skills supports four agent layouts. The pilot targets Moodle 5.3 LTS and 4.5 LTS. See the [compatibility policy](docs/compatibility.md) for the current evidence.
+One set of nine skills supports four agent layouts. The pilot targets Moodle 5.3 LTS and 4.5 LTS. See the [compatibility policy](docs/compatibility.md) for the current evidence.
 
 ## Install from a checkout
 
@@ -48,6 +48,7 @@ For a standalone plugin with a separate Moodle checkout, add `--moodle-root /pat
 - [External API](skills/moodle-external-api/SKILL.md)
 - [PHPUnit](skills/moodle-phpunit/SKILL.md)
 - [Behat](skills/moodle-behat/SKILL.md)
+- [Code and release review](skills/moodle-code-review/SKILL.md)
 
 See the [implementation plan](docs/PLAN.md), [source and reuse notes](docs/sources.md), [authoring guide](docs/authoring.md), and [evaluation instructions](eval/README.md).
 

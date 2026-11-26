@@ -10,5 +10,6 @@ Select workflows by intent and file scope. Resolve the target checkout first whe
 - `moodle-external-api` covers external functions, service schemas, transports, and migration of legacy `ajax.php` actions to `core/ajax`.
 - `moodle-phpunit` covers server behavior, isolated state, generators and role-sensitive tests.
 - `moodle-behat` covers user-visible behavior, roles, features and browser checks.
+- `moodle-code-review` covers peer review, release candidate review, security and reliability evidence, and follow-up on past findings.
 
 For example, an activity setting exposed through an external function calls for plugin, external API and access guidance. Use PHPUnit for the endpoint behavior and Behat when user-visible flows change. A schema change adds database and upgrade guidance.
